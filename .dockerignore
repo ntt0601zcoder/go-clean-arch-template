@@ -1,0 +1,12 @@
+.git
+.github
+bin/
+*.test
+coverage.*
+*_mock.go
+docs/swagger
+.env
+.idea
+.DS_Store
+/tmp
+README.md

@@ -1,0 +1,35 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+/bin/
+
+# Test & coverage artifacts
+*.test
+*.out
+coverage.*
+*.coverprofile
+profile.cov
+
+# Generated mocks (regenerate with `make mocks`)
+*_mock.go
+
+# Swagger output is generated (regenerate with `make swagger`)
+/docs/swagger/
+
+# Go workspace
+go.work
+go.work.sum
+
+# Env
+.env
+
+# Editor / OS
+.DS_Store
+.idea/
+
+# NOTE: committed generated code that MUST stay tracked:
+#   internal/gen/**            (buf protobuf/grpc stubs)
+#   internal/adapter/repo/sqlc/gen/**  (sqlc output)

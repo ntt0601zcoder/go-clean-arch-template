@@ -1,0 +1,31 @@
+version: "2"
+
+run:
+  timeout: 5m
+
+linters:
+  default: standard
+  enable:
+    - bodyclose
+    - errorlint
+    - gocritic
+    - misspell
+    - revive
+    - unconvert
+    - unparam
+  exclusions:
+    rules:
+      # Generated code is not ours to lint.
+      - path: 'internal/gen/'
+        linters: [revive, gocritic, unparam, errcheck, staticcheck, unused]
+      - path: '(.+)/gen/'
+        linters: [revive, gocritic, unparam, errcheck, staticcheck, unused]
+      - path: '_mock\.go'
+        linters: [revive, unparam, unused]
+      # Tests may be more relaxed.
+      - path: '_test\.go'
+        linters: [errcheck, gocritic, unparam]
+
+formatters:
+  enable:
+    - gofmt
